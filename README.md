@@ -10,19 +10,19 @@ Detecting whether a person is wearing a face mask or not and pointing out the ex
 ## How to run   
 1. Install dependencies
    
-`git clone https://github.com/PuroshotamSingh/Object-Detection.git`
+  `git clone https://github.com/PuroshotamSingh/Object-Detection.git`
 
-`cd Object-Detection` 
+  `cd Object-Detection` 
 
-`pip install -r requirements.txt`
+  `pip install -r requirements.txt`
 
 2. To run training code use `simple_obj_detector2.ipynb` notebook.
 
 3. To run Flask app, follow below instructions:
    
-`cd app_backend`
+  `cd app_backend`
 
-`python app.py`
+  `python app.py`
 
 ## Model Architecture
 
@@ -46,11 +46,32 @@ Test Images ouput
 
 ## Evaluation Metric
 
-1. IOU (Intersection Over Union)
-   ```
-   IoU scores how well the predicted bound box overlaps the actual bound box. The idea behind IoU is pretty simple: compare the          intersection and union areas between the predicted and actual bound boxes by dividing the intersection by the union, as shown in the following image:
-   ```
-   
+1. IoU (Intersection Over Union): IoU scores tells how well the predicted bound box overlaps the actual bound box. The idea behind IoU is pretty simple; compare the intersection and union areas between the predicted and actual bound boxes by dividing the intersection by the union, as shown in the following image:
+
    ![iou](https://learnopencv.com/wp-content/uploads/2022/06/2-iou-illustration.png)
-4. Precision
-5. Recall
+
+   IoU value ranges from 0 to 1.
+
+   ![iou1](https://b2633864.smushcdn.com/2633864/wp-content/uploads/2016/09/iou_examples.png?lossy=1&strip=1&webp=1)
+
+   If IOU > 0.5 and predicted object is true class, then this is True Positive(TP).
+   If IOU < 0.5 , then its False Positive(FP).
+   If there is no detection or IOU > 0.5 but prediction is wrong then its False Negative(FN).
+   
+3. Precision: is equal to TP/(TP + FP). In other words, of all bounding box predictions, what fraction was located correctly..
+   This model achieved precision equals to 15.38 %.
+   
+4. Recall: is equal to TP/(TP +FN). In other words, of all target bounding boxes, what fraction did we correctly detect.
+   This model achieved recall equals to 62.5 %.
+
+## Conclusion
+
+Taking in consideration the small size of the data used for training and the fact of training the model from scratch without transfer learning, we have got training accuracy of 94% and validation accuracy of 81%.
+
+### Scope of Improvement
+
+1. The first option to improve the bound box and classificataion performance is increase the training data size.
+
+2. Trying more hyperparameters combinations for.eg. number of layers, number of neurons, activation function etc., can reduce the classification and regression errors.
+
+3. Instead of custom CNN architecture, transfer Learning can be used to improve the accuracy of model.
