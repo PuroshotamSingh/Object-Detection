@@ -7,7 +7,7 @@ Detecting whether a person is wearing a face mask or not and pointing out the ex
 Install dependencies   
 ```bash
 # clone project   
-git clone https://github.com/YourGithubName/deep-learning-project-template
+git clone [https://github.com/YourGithubName/deep-learning-project-template](https://github.com/PuroshotamSingh/Object-Detection.git)
 
 # install requirements
 cd deep-learning-project-template 
