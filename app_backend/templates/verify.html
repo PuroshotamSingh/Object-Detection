@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block bodyblock %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="col-lg-8  offset-lg-2">
+                <h2 class="mt-5">Object(Mask) Detection</h2>
+                <br>
+                <p> <h4>Upload image for which you want to detect mask as object.</h4>
+                <form action="/" method="POST" enctype="multipart/form-data">
+                    <br>
+                    <label for="image" class="form-label">Upload image</label>
+                    <input class="form-control" type="file" id="image" name="image" required="true">
+                    <br>
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+                <br>
+                <br>
+                <a class="btn btn-danger" href="/">Detect Again</a>
+                <br>
+            </div>
+        </div>
+        <div class="col">
+            <br>
+            <br>
+            <br>
+            <br>
+            {% if image %}
+            <p>Output</p>
+                <img src="../static/images/{{name}}" class="image-fluid" alt="No Image" width="300" height="300">
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+</div>
+
+
+
+{% endblock bodyblock%}
