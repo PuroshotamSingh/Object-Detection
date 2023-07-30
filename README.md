@@ -3,26 +3,37 @@
 ## Description   
 Detecting whether a person is wearing a face mask or not and pointing out the exact location of face/mask using object detection capabilities of custom CNN architecture. The model is deployed on Flask web application.
 
+## Flask Application
+
+![flask app](model_saved_images/app_snapshot.jpg)
+
 ## How to run   
-Install dependencies   
+1. Install dependencies   
 ```bash
 # clone project   
 `git clone https://github.com/PuroshotamSingh/Object-Detection.git`
 
 # install requirements
-cd deep-learning-project-template 
-pip install -r requirements.txt
+`cd Object-Detection` 
+`pip install -r requirements.txt`
  ```   
- Next, navigate to any file and run it.   
+2. To run training code use `simple_obj_detector2.ipynb` notebook.
+
+3. To run Flask app, follow below instructions:
  ```bash
 # module folder
-cd project
+`cd app_backend`
 
-# run module (example: mnist as your main contribution)   
-python lit_classifier_main.py    
+# run flask app
+`python app.py`
 ```
 
 ## Model Architecture
 
 The CNN model architecture constructed for this use case is shown in the image below.
+
 ![architecture](model_saved_images/model.png)
+
+## Model Output
+Model Accuracy
+![model accuracy](model_saved_images/accuracy.png)
