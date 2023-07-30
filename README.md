@@ -7,7 +7,7 @@ Detecting whether a person is wearing a face mask or not and pointing out the ex
 Install dependencies   
 ```bash
 # clone project   
-git clone [https://github.com/YourGithubName/deep-learning-project-template](https://github.com/PuroshotamSingh/Object-Detection.git)
+`git clone https://github.com/PuroshotamSingh/Object-Detection.git`
 
 # install requirements
 cd deep-learning-project-template 
@@ -22,23 +22,7 @@ cd project
 python lit_classifier_main.py    
 ```
 
-## Imports
-This project is setup as a package which means you can now easily import any file into any other file like so:
-```python
-from project.datasets.mnist import mnist
-from project.lit_classifier_main import LitClassifier
-from pytorch_lightning import Trainer
+## Model Architecture
 
-# model
-model = LitClassifier()
-
-# data
-train, val, test = mnist()
-
-# train
-trainer = Trainer()
-trainer.fit(model, train, val)
-
-# test using the best model!
-trainer.test(test_dataloaders=test)
-```
+The CNN model architecture constructed for this use case is shown in the image below.
+![architecture](model_saved_images/model.png)
