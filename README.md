@@ -58,19 +58,19 @@ Test Images ouput
    If IOU < 0.5 , then its False Positive(FP).
    If there is no detection or IOU > 0.5 but prediction is wrong then its False Negative(FN).
    
-3. Precision: is equal to TP/(TP + FP). In other words, of all bounding box predictions, what fraction was located correctly..
-   This model achieved precision equals to 15.38 %.
+3. Precision: is equal to TP/(TP + FP). In other words, of all bounding box predictions, what fraction was located correctly.
    
 4. Recall: is equal to TP/(TP +FN). In other words, of all target bounding boxes, what fraction did we correctly detect.
-   This model achieved recall equals to 62.5 %.
+
+5. mAP (Mean Average Precision): The mAP is computed by first calculating the Average Precision (AP) for each class, and then taking the    mean of the AP values across all classes. To compute the AP for a single class, the precision-recall curve for that class is first        created. The area under this curve (AUC) represents the AP for that class. The mAP value ranges from 0 to 1, where 0 indicates poor       performance and 1 indicates perfect performance.
 
 ## Conclusion
 
-Taking in consideration the small size of the data used for training and the fact of training the model from scratch without transfer learning, we have got training accuracy of 94% and validation accuracy of 81%.
+Taking in consideration the small size of the data used for training and the fact of training the model from scratch without transfer learning, we have got training accuracy of 94% and validation accuracy of 81% and mAP equals to 0.42.
 
 ### Scope of Improvement
 
-1. The first option to improve the bound box and classificataion performance is increase the training data size.
+1. The first option to improve the bounding box and classificataion performance by increasing the training data.
 
 2. Trying more hyperparameters combinations for.eg. number of layers, number of neurons, activation function etc., can reduce the classification and regression errors.
 
